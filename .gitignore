@@ -35,26 +35,26 @@
 # # Local History for Visual Studio Code
 # .history/
 
-# # Common credential files
-# **/credentials.json
-# **/client_secrets.json
-# **/client_secret.json
-# *creds*
-# *.dat
-# *password*
-# *.httr-oauth*
+# Common credential files
+**/credentials.json
+**/client_secrets.json
+**/client_secret.json
+*creds*
+*.dat
+*password*
+*.httr-oauth*
 
-# # Private Node Modules
-# node_modules/
-# creds.js
+# Private Node Modules
+node_modules/
+creds.js
 
-# # Private Files
-# *.json
-# *.csv
-# *.csv.gz
-# *.tsv
-# *.tsv.gz
-# *.xlsx
+# Private Files
+*.json
+*.csv
+*.csv.gz
+*.tsv
+*.tsv.gz
+*.xlsx
 
 
 # # Mac/OSX
