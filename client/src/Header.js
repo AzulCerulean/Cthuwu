@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { BsPersonFill } from "react-icons/bs";
 import { ImMenu } from "react-icons/im";
 import Cthuwu from "./assets/cthulhu-gcc92f20b0_640.png";
@@ -31,6 +31,7 @@ const Wrapper = styled.div`
 const CthuwuIcon = styled.img`
   width: 4.5em;
   object-fit: contain;
+  cursor: pointer;
 `;
 
 //https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/

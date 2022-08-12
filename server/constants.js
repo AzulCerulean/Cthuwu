@@ -6,7 +6,6 @@ const STRINGS = {
     feed: "feed",
   },
   endpoints: {
-    // users: "/api/users",
     user: "/api/user/:_id",
     feed_id: "/api/feed/:_id",
   },

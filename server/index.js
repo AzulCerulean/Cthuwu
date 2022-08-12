@@ -5,9 +5,8 @@ const morgan = require("morgan");
 
 const PORT = 8000;
 
-const { STRINGS } = require("./constants");
-
-const { getUser } = require("./handlers/users");
+const { getUser, postUser } = require("./handlers/users");
+const { postFeed, getFeeds, getFeed, patchFeed, deleteFeed } = require("./handlers/feed");
 
 express()
   // This will give us will log more info to the console. see https://www.npmjs.com/package/morgan
@@ -21,7 +20,16 @@ express()
   .get("/", (req, res) => {
     res.status(200).json({ status: 200, message: "Hello" });
   })
+  //user endpoints
   .get("/api/user/:_id", getUser)
+  .post("/api/signup", postUser)
+
+  //feed endpoints
+  .post("/api/feed", postFeed)
+  .get("/api/feed", getFeeds)
+  .get("/api/feed/:id", getFeed)
+  .patch("/api/feed/:id", patchFeed)
+  .delete("/api/feed/:id", deleteFeed)
 
   .get("*", (req, res) => {
     res.status(404).json({
