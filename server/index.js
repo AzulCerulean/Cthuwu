@@ -6,10 +6,17 @@ const morgan = require("morgan");
 const PORT = 8000;
 
 const { getUser, postUser } = require("./handlers/users");
-const { postFeed, getFeeds, getFeed, patchFeed, deleteFeed } = require("./handlers/feed");
+const {
+  postFeed,
+  getFeeds,
+  getFeed,
+  patchFeed,
+  deleteFeed,
+} = require("./handlers/feed");
 
 express()
-  // This will give us will log more info to the console. see https://www.npmjs.com/package/morgan
+  // This will give us will log more info to the console.
+  // see https://www.npmjs.com/package/morgan
   .use(morgan("tiny"))
   .use(express.json())
 
