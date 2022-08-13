@@ -1,19 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { BsPersonFill } from "react-icons/bs";
 import { ImMenu } from "react-icons/im";
 import Cthuwu from "./assets/cthulhu-gcc92f20b0_640.png";
+import { Link } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai";
+import { SidebarData } from "./assets/SidebarData";
 
 const Header = () => {
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
+
   return (
     <Wrapper>
-      <Button>
-        <Menu fontSize="large" />
+
+      <Button to="#">
+        <Menu onClick={showSidebar} />
       </Button>
 
-      <CthuwuIcon src={Cthuwu} alt="Cthuwu logo" />
+      <NavMenu className={sidebar ? "nav-menu active" : "nav-menu"}>
+        <ul className="nav-menu-items">
+          <li className="navbar-toggle">
+            <Link to="#" className="menu-close">
+              <AiOutlineClose />
+            </Link>
+          </li>
+          {
+            //mapping over the SidebarData file,
+            // no matter how many menu items, just need this lil' bit
+            SidebarData.map((item, index) => {
+              return (
+                <li key={index}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </NavMenu>
 
-      <Button>
+      <Link to="/main">
+        <CthuwuIcon src={Cthuwu} alt="Cthuwu logo" />
+      </Link>
+
+      <Button to="#">
         <Profile fontSize="large" />
       </Button>
     </Wrapper>
@@ -35,7 +69,7 @@ const CthuwuIcon = styled.img`
 `;
 
 //https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
-const Button = styled.button`
+const Button = styled(Link)`
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -59,6 +93,10 @@ const Button = styled.button`
 const Menu = styled(ImMenu)`
   font-size: x-large;
   padding: 0.75em;
+`;
+
+const NavMenu = styled.nav`
+
 `;
 
 const Profile = styled(BsPersonFill)`

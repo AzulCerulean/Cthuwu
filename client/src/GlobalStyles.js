@@ -55,6 +55,16 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+h1 {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 700;
+	font-size: large;
+}
+p {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 `;
 
 export default GlobalStyles;
