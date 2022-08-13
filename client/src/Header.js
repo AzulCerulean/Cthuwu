@@ -10,38 +10,40 @@ import { SidebarData } from "./assets/SidebarData";
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
 
+  //toggle for the sidebar
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <Wrapper>
-
       <Button to="#">
         <Menu onClick={showSidebar} />
       </Button>
 
-      <NavMenu className={sidebar ? "nav-menu active" : "nav-menu"}>
-        <ul className="nav-menu-items">
-          <li className="navbar-toggle">
-            <Link to="#" className="menu-close">
-              <AiOutlineClose />
-            </Link>
-          </li>
-          {
-            //mapping over the SidebarData file,
-            // no matter how many menu items, just need this lil' bit
-            SidebarData.map((item, index) => {
-              return (
-                <li key={index}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })
-          }
-        </ul>
-      </NavMenu>
+      {sidebar && (
+        <NavMenu>
+          <ul onClick={showSidebar}>
+            <Li>
+              <LiLink to="#">
+                <AiOutlineClose fontSize="x-large" />
+              </LiLink>
+            </Li>
+            {
+              //mapping over the SidebarData file,
+              // no matter how many menu items, just need this lil' bit
+              SidebarData.map((item, index) => {
+                return (
+                  <Li key={index}>
+                    <LiLink to={item.path}>
+                      {item.icon}
+                      <p>{item.title}</p>
+                    </LiLink>
+                  </Li>
+                );
+              })
+            }
+          </ul>
+        </NavMenu>
+      )}
 
       <Link to="/main">
         <CthuwuIcon src={Cthuwu} alt="Cthuwu logo" />
@@ -96,7 +98,38 @@ const Menu = styled(ImMenu)`
 `;
 
 const NavMenu = styled.nav`
+  display: flex;
+  justify-content: flex-end;
+  border: 1px lightgray;
+  z-index: 1000;
+  height: 100vh;
+  width: 50vw;
+  background-color: salmon;
+  color: white;
+  top: 0;
+  /* left: -100%; */
+  position: fixed;
+  transition: 850ms;
 
+  &:active {
+    /* transform: translate(100%); */
+    transition: 300ms;
+  }
+`;
+
+const Li = styled.li`
+  display: flex;
+`;
+
+const LiLink = styled(Link)`
+  display: flex;
+  padding-right: 1em;
+  padding-top: 1em;
+  text-decoration: none;
+  align-items: center;
+  &:visited {
+    color: white;
+  }
 `;
 
 const Profile = styled(BsPersonFill)`

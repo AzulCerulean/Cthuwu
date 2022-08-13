@@ -7,6 +7,6 @@ export const SidebarData = [
   {
     title: "Home",
     path: "/main",
-    icon: <AiIcons.AiFillHome />
+    icon: <AiIcons.AiFillHome fontSize="x-large"/>
   }
 ]
