@@ -24,16 +24,13 @@ express()
   .use(express.static("public"))
 
   //endpoints
-  .get("/", (req, res) => {
-    res.status(200).json({ status: 200, message: "Hello" });
-  })
   //user endpoints
   .get("/api/user/:_id", getUser)
   .post("/api/signup", postUser)
 
   //feed endpoints
   .post("/api/feed", postFeed)
-  .get("/api/feed", getFeeds)
+  .get("/api/feeds", getFeeds)
   .get("/api/feed/:id", getFeed)
   .patch("/api/feed/:id", patchFeed)
   .delete("/api/feed/:id", deleteFeed)
@@ -46,5 +43,5 @@ express()
   })
 
   .listen(PORT, () => {
-    console.log(`Example app listening on port ${PORT}`);
+    console.log(`listening on port ${PORT}`);
   });
