@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import MainPage from "./MainPage";
 import styled from "styled-components";
+import RecipeDetails from "./RecipeDetails";
 
 const App = () => {
   return (
@@ -13,11 +14,8 @@ const App = () => {
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/user/:_id" element="user page" />
           <Route exact path="/main" element={<MainPage />} />
-          <Route exact path="/feed/:_id" element="recipe/feed page" />
+          <Route exact path="/feed/:_id" element={<RecipeDetails />} />
         </Routes>
-        {/* recipe cards */}
-        {/* buttons */}
-        {/* BsHeartFill */}
       </BrowserRouter>
     </Wrapper>
   );

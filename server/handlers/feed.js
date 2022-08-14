@@ -87,11 +87,11 @@ const getFeed = async (req, res) => {
       .collection(STRINGS.collections.feed)
       .findOne({ _id: ObjectId(_id) });
     feed
-      ? res.status(200).json({ status: 200, data: feed, message: "success" })
+      ? res.status(200).json({ status: 200, feed, message: "success" })
       : res
           .status(404)
-          .json({ status: 404, data: feed, message: "No Feed found" });
-  } catch (error) {
+          .json({ status: 404, feed, message: "No Feed found" });
+  } catch (e) {
     console.error("Error finding this Feed:", e);
   } finally {
     client.close();
