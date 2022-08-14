@@ -5,7 +5,7 @@ const morgan = require("morgan");
 
 const PORT = 8000;
 
-const { getUser, postUser } = require("./handlers/users");
+const { getUser, postUser, getLogIn } = require("./handlers/users");
 const {
   postFeed,
   getFeeds,
@@ -27,6 +27,7 @@ express()
   //user endpoints
   .get("/api/user/:_id", getUser)
   .post("/api/signup", postUser)
+  .get("/api/login", getLogIn)
 
   //feed endpoints
   .post("/api/feed", postFeed)

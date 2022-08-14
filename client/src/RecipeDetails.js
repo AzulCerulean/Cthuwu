@@ -19,13 +19,13 @@ const RecipeDetails = () => {
   if (!loaded) {
     return <Loading />;
   }
-
+  
   return (
     <MainWrapper>
       {recipe &&
         recipe.recipeCard.recipe.map((element) => {
           return (
-            <Wrapper>
+            <Wrapper key={Math.floor(Math.random() * 10000)}>
               <h1>{element.title}</h1>
               <Img src={element.img} />
               <TimeIng>
@@ -39,7 +39,7 @@ const RecipeDetails = () => {
       {recipe &&
         recipe.comments.map((element) => {
           return (
-            <CommentDiv>
+            <CommentDiv key={Math.floor(Math.random() * 10000)}>
               <h1>Comments</h1>
               <textarea />
               <p>{element.uname}</p>
@@ -77,7 +77,7 @@ const TimeIng = styled.div`
   justify-content: space-between;
 `;
 
-const CommentDiv = styled.div`
+const CommentDiv = styled.form`
   display: flex;
   flex-direction: column;
 `;
