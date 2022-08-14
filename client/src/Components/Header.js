@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { BsPersonFill } from "react-icons/bs";
 import { ImMenu } from "react-icons/im";
-import Cthuwu from "./assets/cthulhu-gcc92f20b0_640.png";
+import Cthuwu from "../assets/cthulhu-gcc92f20b0_640.png";
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
-import { SidebarData } from "./assets/SidebarData";
+import { SidebarData } from "../assets/SidebarData";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);

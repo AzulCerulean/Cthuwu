@@ -73,6 +73,8 @@ const Wrapper = styled.div`
 
 const EleDiv = styled.div`
   display: flex;
+  align-items: center;
+  gap: 1em;
 `;
 
 const Img = styled.img`

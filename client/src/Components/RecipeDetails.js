@@ -36,17 +36,26 @@ const RecipeDetails = () => {
             </Wrapper>
           );
         })}
-      {recipe &&
+      {recipe.comments ? (
         recipe.comments.map((element) => {
           return (
             <CommentDiv key={Math.floor(Math.random() * 10000)}>
               <h1>Comments</h1>
               <textarea />
+              <button>Add Comment</button>
               <p>{element.uname}</p>
               <p>{element.comment}</p>
             </CommentDiv>
           );
-        })}
+        })) : (
+          
+            <CommentDiv>
+              <h1>Comments</h1>
+              <textarea />
+              <button>Add Comment</button>
+            </CommentDiv>
+          
+        )}
     </MainWrapper>
   );
 };

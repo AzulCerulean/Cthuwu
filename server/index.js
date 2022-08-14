@@ -27,7 +27,7 @@ express()
   //user endpoints
   .get("/api/user/:_id", getUser)
   .post("/api/signup", postUser)
-  .get("/api/login", getLogIn)
+  .patch("/api/login", getLogIn)
 
   //feed endpoints
   .post("/api/feed", postFeed)

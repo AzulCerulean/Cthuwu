@@ -147,7 +147,7 @@ const getLogIn = async (req, res) => {
     //fetch user from db
     const data = await db.collection("users").findOne({ username: username });
 
-    if (!data) {
+    if (!data.username) {
       return res
         .status(200)
         .json({ status: 200, message: "No user found.", data: username });
@@ -170,8 +170,6 @@ const getLogIn = async (req, res) => {
       email: data.email,
     };
 
-    console.log(newData);
-
     // Verify if data was received and respond appropriately.
     if (data) {
       return res
@@ -188,5 +186,7 @@ const getLogIn = async (req, res) => {
     client.close();
   }
 };
+
+const updateUser = async (req, res) => {};
 
 module.exports = { getUser, postUser, getLogIn };
