@@ -76,7 +76,7 @@ const SignUp = () => {
           required
         />
         <button type="submit" onClick={handleSubmit}>
-          <p>Log In</p>
+          <p>Sign Up!</p>
         </button>
       </form>
       <div>

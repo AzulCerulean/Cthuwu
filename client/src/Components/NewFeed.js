@@ -81,10 +81,10 @@ const NewFeed = () => {
           <h1>Image:</h1>
           <input type="url" placeholder="enter img url" onChange={handleImg} />
         </FormDiv1>
-        <FormDiv1>
+        {/* <FormDiv1>
           <p>or :</p>
           <input type="file" accept=".jpg, .jpeg, .png" onChange={handleImg} />
-        </FormDiv1>
+        </FormDiv1> */}
         <TextADiv>
           <h1>Ingredients:</h1>
           <textarea

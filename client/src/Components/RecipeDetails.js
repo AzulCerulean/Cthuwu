@@ -6,7 +6,7 @@ import Loading from "./Loading";
 
 const RecipeDetails = () => {
   const { currentUser, authenticated } = useContext(UserContext);
-  const [recipe, setRecipe] = useState({});
+  const [recipe, setRecipe] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const recipeID = useParams()._id;
   const navigate = useNavigate();
@@ -20,45 +20,25 @@ const RecipeDetails = () => {
   //create states to hold user input
   const [title, setTitle] = useState("");
   const [img, setImg] = useState("");
-  const [ingregients, setIngredients] = useState("");
+  const [ingredients, setIngredients] = useState("");
   const [time, setTime] = useState("");
   const [description, setDescription] = useState("");
 
   //create HandlerFunctions for each State/input
   const handleTitle = (e) => {
-    if (e.target.value === "") {
-      setTitle(recipe.recipeCard.recipe[0].title);
-    } else {
-      setTitle(e.target.value);
-    }
+    setTitle(e.target.value);
   };
   const handleImg = (e) => {
-    if (e.target.value === "") {
-      setImg(recipe.recipeCard.recipe[0].img);
-    } else {
-      setImg(e.target.value);
-    }
+    setImg(e.target.value);
   };
   const handleIngredients = (e) => {
-    if (e.target.value === "") {
-      setIngredients(recipe.recipeCard.recipe[0].ingredients);
-    } else {
-      setIngredients(e.target.value);
-    }
+    setIngredients(e.target.value);
   };
   const handleTime = (e) => {
-    if (e.target.value === "") {
-      setTime(recipe.recipeCard.recipe[0].time);
-    } else {
-      setTime(e.target.value);
-    }
+    setTime(e.target.value);
   };
   const handleDescription = (e) => {
-    if (e.target.value === "") {
-      setDescription(recipe.recipeCard.recipe[0].description);
-    } else {
-      setDescription(e.target.value);
-    }
+    setDescription(e.target.value);
   };
 
   //GET data from db for the recipe
@@ -70,6 +50,16 @@ const RecipeDetails = () => {
         setLoaded(true);
       });
   }, []);
+
+  useEffect(() => {
+    if (recipe) {
+      setTitle(recipe.recipeCard.recipe[0].title);
+      setImg(recipe.recipeCard.recipe[0].img);
+      setIngredients(recipe.recipeCard.recipe[0].ingredients);
+      setTime(recipe.recipeCard.recipe[0].time);
+      setDescription(recipe.recipeCard.recipe[0].description);
+    }
+  }, [recipe]);
 
   //when triggred, finish editting and PATCH
   const patchHandler = async (e) => {
@@ -84,7 +74,7 @@ const RecipeDetails = () => {
             {
               title: title,
               img: img,
-              ingredients: ingregients,
+              ingredients: ingredients,
               time: time,
               description: description,
             },
@@ -136,9 +126,12 @@ const RecipeDetails = () => {
               <h1>{element.title}</h1>
               <Img src={element.img} />
               <TimeIng>
+                <p>ingredients:</p>
                 <p>{element.ingredients}</p>
-                <p>{element.cookingtime}</p>
+                <p>cooking time:</p>
+                <p>{element.time}</p>
               </TimeIng>
+              <p>description:</p>
               <p>{element.description}</p>
             </Wrapper>
           );
@@ -156,48 +149,45 @@ const RecipeDetails = () => {
               <Form onSubmit={patchHandler}>
                 <FormDiv1>
                   <h1>Title:</h1>
-                  <input type="text" onChange={handleTitle} />
+                  <input type="text" value={title} onChange={handleTitle} />
                 </FormDiv1>
                 <FormDiv1>
                   <h1>Image:</h1>
                   <input
                     type="url"
+                    value={img}
                     placeholder="enter img url"
                     onChange={handleImg}
                   />
                 </FormDiv1>
-                <FormDiv1>
+                {/* <FormDiv1>
                   <p>or :</p>
                   <input
                     type="file"
                     accept=".jpg, .jpeg, .png"
                     onChange={handleImg}
                   />
-                </FormDiv1>
+                </FormDiv1> */}
                 <TextADiv>
                   <h1>Ingredients:</h1>
                   <textarea
                     rows="5"
                     cols="33"
-                    placeholder="Enter recipe ingredients here"
+                    value={ingredients}
                     maxLength="1000"
                     onChange={handleIngredients}
                   />
                 </TextADiv>
                 <FormDiv1>
                   <h1>Time:</h1>
-                  <input
-                    type="text"
-                    placecolder="How Long does the recipe take to make?"
-                    onChange={handleTime}
-                  />
+                  <input type="text" value={time} onChange={handleTime} />
                 </FormDiv1>
                 <TextADiv>
                   <h1>Recipe:</h1>
                   <textarea
                     rows="8"
                     cols="33"
-                    placeholder="Enter recipe details here! ~"
+                    value={description}
                     maxLength="1000"
                     onChange={handleDescription}
                   />
@@ -217,8 +207,8 @@ const RecipeDetails = () => {
           return (
             <CommentDiv key={Math.floor(Math.random() * 10000)}>
               <h1>Comments</h1>
-              <textarea />
-              <button>Add Comment</button>
+              <textarea rows="2" cols="40" wrap="wrap" disabled />
+              <button disabled>Add Comment</button>
               <p>{element.uname}</p>
               <p>{element.comment}</p>
             </CommentDiv>
@@ -227,8 +217,14 @@ const RecipeDetails = () => {
       ) : (
         <CommentDiv>
           <h1>Comments</h1>
-          <textarea />
-          <button>Add Comment</button>
+          <textarea
+            rows="2"
+            cols="40"
+            wrap="wrap"
+            placeholder="PlaceHolder for now"
+            disabled
+          />
+          <button disabled>Add Comment</button>
         </CommentDiv>
       )}
     </MainWrapper>
@@ -258,6 +254,7 @@ const Img = styled.img`
 
 const TimeIng = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 `;
 
