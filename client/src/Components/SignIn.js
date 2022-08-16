@@ -54,9 +54,19 @@ const SignIn = () => {
       <form>
         <h1>Sign in~ !! ^.^</h1>
         <p>Username:</p>
-        <input type="text" placeholder="Username" onChange={usernameHandler} />
+        <input
+          type="text"
+          placeholder="Username"
+          onChange={usernameHandler}
+          required
+        />
         <p>Password:</p>
-        <input type="password" placeholder="Password" onChange={passHandler} />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={passHandler}
+          required
+        />
         <button type="submit" onClick={handleSubmit}>
           <p>Log In</p>
         </button>

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "../assets/SidebarData";
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { HiOutlinePlusCircle } from "react-icons/hi";
 import { UserContext } from "../context/UserContext";
 
 const Header = () => {
@@ -52,6 +53,14 @@ const Header = () => {
                 );
               })
             }
+            {authenticated && currentUser && (
+              <Li>
+                <LiLink to="/newfeed">
+                  <HiOutlinePlusCircle fontSize="x-large" />
+                  <p>Create New Recipe</p>
+                </LiLink>
+              </Li>
+            )}
             {authenticated && currentUser ? (
               <Li>
                 <LiLink to="/" onClick={signoutHandler}>
@@ -160,6 +169,7 @@ const LiLink = styled(Link)`
   padding-top: 1em;
   text-decoration: none;
   align-items: center;
+  color: white;
   &:visited {
     color: white;
   }

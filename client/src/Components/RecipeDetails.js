@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { UserContext } from "../context/UserContext";
 import Loading from "./Loading";
@@ -9,6 +9,8 @@ const RecipeDetails = () => {
   const [recipe, setRecipe] = useState({});
   const [loaded, setLoaded] = useState(false);
   const recipeID = useParams()._id;
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetch(`/api/feed/${recipeID}`)
       .then((res) => res.json())
@@ -17,6 +19,19 @@ const RecipeDetails = () => {
         setLoaded(true);
       });
   }, []);
+
+  //when triggered, enable editting
+  const editHandler = async () => {};
+  //when triggred, finish editting and PATCH
+  const patchHandler = async () => {};
+  //when triggered, delete post
+  const deleteHandler = async () => {
+    await fetch(`/api/feed/${recipeID}`)
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
+
+    navigate("/main");
+  };
 
   if (!loaded) {
     return <Loading />;

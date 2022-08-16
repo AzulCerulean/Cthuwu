@@ -55,15 +55,26 @@ const SignUp = () => {
       <form>
         <h1>Sign Up~ !!</h1>
         <p>Username:</p>
-        <input type="text" placeholder="Username" onChange={usernameHandler} />
+        <input
+          type="text"
+          placeholder="Username"
+          onChange={usernameHandler}
+          required
+        />
         <p>Email:</p>
         <input
           type={email}
           placeholder="Email@domain.com"
           onChange={emailHandler}
+          required
         />
         <p>Password:</p>
-        <input type="password" placeholder="Password" onChange={passHandler} />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={passHandler}
+          required
+        />
         <button type="submit" onClick={handleSubmit}>
           <p>Log In</p>
         </button>
