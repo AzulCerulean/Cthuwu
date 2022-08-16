@@ -46,7 +46,7 @@ const SignIn = () => {
       return;
     } else {
       window.alert("Signed in!");
-      return navigate("/");
+      return navigate("/main");
     }
   };
   return (
