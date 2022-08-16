@@ -51,7 +51,7 @@ const SignIn = () => {
   };
   return (
     <MainWrapper>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Sign in~ !! ^.^</h1>
         <p>Username:</p>
         <input
@@ -67,7 +67,7 @@ const SignIn = () => {
           onChange={passHandler}
           required
         />
-        <button type="submit" onClick={handleSubmit}>
+        <button>
           <p>Log In</p>
         </button>
       </form>

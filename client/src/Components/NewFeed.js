@@ -16,8 +16,6 @@ const NewFeed = () => {
   const [time, setTime] = useState("");
   const [description, setDescription] = useState("");
 
-  const [data, setData] = useState("");
-
   //create HandlerFunctions for each State/input
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -60,9 +58,6 @@ const NewFeed = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      })
       .catch((err) => console.log(err));
 
     navigate(`/main`);
@@ -147,12 +142,10 @@ const Form = styled.form`
 const FormDiv1 = styled.div`
   display: flex;
   gap: 1em;
-  /* padding: 1em; */
 `;
 const TextADiv = styled.div`
   display: flex;
   flex-direction: column;
-  /* padding: 1em; */
 `;
 
 export default NewFeed;

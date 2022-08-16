@@ -33,8 +33,8 @@ const Header = () => {
 
       {sidebar && (
         <NavMenu>
-          <ul onClick={showSidebar}>
-            <Li>
+          <ul>
+            <Li onClick={showSidebar}>
               <LiLink to="#">
                 <AiOutlineClose fontSize="x-large" />
               </LiLink>
@@ -44,7 +44,7 @@ const Header = () => {
               // no matter how many menu items, just need this lil' bit
               SidebarData.map((item, index) => {
                 return (
-                  <Li key={index}>
+                  <Li key={index} onClick={showSidebar}>
                     <LiLink to={item.path}>
                       {item.icon}
                       <p>{item.title}</p>
@@ -54,7 +54,7 @@ const Header = () => {
               })
             }
             {authenticated && currentUser && (
-              <Li>
+              <Li onClick={showSidebar}>
                 <LiLink to="/newfeed">
                   <HiOutlinePlusCircle fontSize="x-large" />
                   <p>Create New Recipe</p>
@@ -62,14 +62,14 @@ const Header = () => {
               </Li>
             )}
             {authenticated && currentUser ? (
-              <Li>
+              <Li onClick={showSidebar}>
                 <LiLink to="/" onClick={signoutHandler}>
                   <FaSignOutAlt fontSize="x-large" />
                   <p>Sign Out</p>
                 </LiLink>
               </Li>
             ) : (
-              <Li>
+              <Li onClick={showSidebar}>
                 <LiLink to="/signin">
                   <FaSignInAlt fontSize="x-large" />
                   <p>Sign In</p>
