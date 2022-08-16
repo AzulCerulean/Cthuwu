@@ -11,7 +11,7 @@ import { UserContext } from "../context/UserContext";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
-  const { setCurrentUser, setAuthenticated, authenticated } =
+  const { setCurrentUser, setAuthenticated, authenticated, currentUser } =
     useContext(UserContext);
 
   //for the signout button
@@ -52,7 +52,7 @@ const Header = () => {
                 );
               })
             }
-            {authenticated ? (
+            {authenticated && currentUser ? (
               <Li>
                 <LiLink to="/" onClick={signoutHandler}>
                   <FaSignOutAlt fontSize="x-large" />
@@ -75,9 +75,15 @@ const Header = () => {
         <CthuwuIcon src={Cthuwu} alt="Cthuwu logo" />
       </Link>
 
-      <Button to="#">
-        <Profile fontSize="large" />
-      </Button>
+      {authenticated && currentUser ? (
+        <Button to={`/user/${currentUser.newData._id}`}>
+          <Profile fontSize="large" />
+        </Button>
+      ) : (
+        <Button to="/signin">
+          <FaSignInAlt fontSize="x-large" />
+        </Button>
+      )}
     </Wrapper>
   );
 };
@@ -99,6 +105,7 @@ const CthuwuIcon = styled.img`
 //https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
 const Button = styled(Link)`
   border: none;
+  margin: 0 1em;
   border-radius: 50%;
   cursor: pointer;
   color: black;
