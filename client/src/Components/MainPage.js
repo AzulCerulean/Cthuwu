@@ -13,7 +13,6 @@ const MainPage = () => {
       .then(async (res) => res.json())
       .then((data) => {
         setFeeds(data.feeds);
-        console.log(data.feeds);
         setLoaded(true);
       })
       .catch((e) => console.log(e));

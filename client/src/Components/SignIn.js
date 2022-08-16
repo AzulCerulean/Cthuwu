@@ -45,6 +45,7 @@ const SignIn = () => {
     if (!authenticated) {
       return;
     } else {
+      window.alert("Signed in!");
       return navigate("/");
     }
   };
@@ -57,7 +58,7 @@ const SignIn = () => {
         <p>Password:</p>
         <input type="password" placeholder="Password" onChange={passHandler} />
         <button type="submit" onClick={handleSubmit}>
-          Log In
+          <p>Log In</p>
         </button>
       </form>
       <div>
@@ -75,7 +76,9 @@ const MainWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 2em;
+  margin: 1em;
+  border: 1px solid lightskyblue;
+  padding: 2em;
 `;
-
 
 export default SignIn;

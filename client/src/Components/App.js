@@ -6,6 +6,7 @@ import styled from "styled-components";
 import RecipeDetails from "./RecipeDetails";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
+import UserDetails from "./UserDetails";
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
-          <Route exact path="/user/:_id" element="user page" />
+          <Route exact path="/user/:_id" element={<UserDetails />} />
           <Route exact path="/main" element={<MainPage />} />
           <Route exact path="/feed/:_id" element={<RecipeDetails />} />
           <Route exact path="/signup" element={<SignUp />} />

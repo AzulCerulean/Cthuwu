@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { BsPersonFill } from "react-icons/bs";
 import { ImMenu } from "react-icons/im";
@@ -6,9 +6,20 @@ import Cthuwu from "../assets/cthulhu-gcc92f20b0_640.png";
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "../assets/SidebarData";
+import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { UserContext } from "../context/UserContext";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
+  const { setCurrentUser, setAuthenticated, authenticated } =
+    useContext(UserContext);
+
+  //for the signout button
+  const signoutHandler = async (e) => {
+    await setCurrentUser("");
+    await setAuthenticated(false);
+    window.alert("Signed Out!");
+  };
 
   //toggle for the sidebar
   const showSidebar = () => setSidebar(!sidebar);
@@ -41,6 +52,21 @@ const Header = () => {
                 );
               })
             }
+            {authenticated ? (
+              <Li>
+                <LiLink to="/" onClick={signoutHandler}>
+                  <FaSignOutAlt fontSize="x-large" />
+                  <p>Sign Out</p>
+                </LiLink>
+              </Li>
+            ) : (
+              <Li>
+                <LiLink to="/signin">
+                  <FaSignInAlt fontSize="x-large" />
+                  <p>Sign In</p>
+                </LiLink>
+              </Li>
+            )}
           </ul>
         </NavMenu>
       )}

@@ -109,7 +109,9 @@ const postUser = async (req, res) => {
 
     //if insert succesful, res appropriately
     if (response.acknowledged) {
-      return res.status(201).json({ status: 201, data: { newUserInfo } });
+      return res
+        .status(201)
+        .json({ status: 201, data: { newUserInfo }, message: "user created" });
     } else {
       return res
         .status(500)

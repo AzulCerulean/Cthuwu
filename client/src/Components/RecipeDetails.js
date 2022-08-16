@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { UserContext } from "../context/UserContext";
 import Loading from "./Loading";
 
 const RecipeDetails = () => {
+  const { currentUser, authenticated } = useContext(UserContext);
   const [recipe, setRecipe] = useState({});
   const [loaded, setLoaded] = useState(false);
   const recipeID = useParams()._id;
@@ -19,7 +21,7 @@ const RecipeDetails = () => {
   if (!loaded) {
     return <Loading />;
   }
-  
+
   return (
     <MainWrapper>
       {recipe &&
@@ -47,15 +49,14 @@ const RecipeDetails = () => {
               <p>{element.comment}</p>
             </CommentDiv>
           );
-        })) : (
-          
-            <CommentDiv>
-              <h1>Comments</h1>
-              <textarea />
-              <button>Add Comment</button>
-            </CommentDiv>
-          
-        )}
+        })
+      ) : (
+        <CommentDiv>
+          <h1>Comments</h1>
+          <textarea />
+          <button>Add Comment</button>
+        </CommentDiv>
+      )}
     </MainWrapper>
   );
 };
