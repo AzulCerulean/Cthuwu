@@ -47,7 +47,7 @@ const MainPage = () => {
                     <h2>Ingredients: </h2>
                     {element.ingredients}
                   </EleDiv>
-                  <EleDiv>{element.cookingtime}</EleDiv>
+                  <EleDiv>{element.time}</EleDiv>
                 </Wrapper>
               );
             });
