@@ -26,6 +26,7 @@ I tried to limit my use of packages as we were supposed to build things from the
 ## How to use it
 
 Users are first dropped to the landing page:
+
 ![Cthuwu landing page](./assets/Screen%20Shot%202022-08-17%20at%2010.09.49%20AM.png)
 
 They then can log-in or sign-up by either going to the menu on the top left or the sign-in button on the top right.
