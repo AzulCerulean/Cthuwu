@@ -65,12 +65,11 @@ const getFeeds = async (req, res) => {
     } else {
       return res.status(404).json({ status: 404, message: "No Feeds found" });
     }
-  } catch (error) {
+  } catch (e) {
     console.error("Error finding any Feed:", e);
     return res.status(500).json({
       status: 500,
       message: "Something went wrong, please try again.",
-      data: _id,
     });
   } finally {
     client.close();
