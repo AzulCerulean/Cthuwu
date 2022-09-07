@@ -21,15 +21,6 @@ const LandingPage = () => {
 
   return (
     <MainWrapper>
-      <Wrapper>
-        {foodArr.map((foodPic) => {
-          return (
-            <>
-              <FoodImg src={foodPic} />
-            </>
-          );
-        })}
-      </Wrapper>
       <DescDiv>
         <Catto
           src="https://media.giphy.com/media/gpVDfYCRDeTy8/giphy.gif"
@@ -40,6 +31,15 @@ const LandingPage = () => {
           <p>Social media for sharing, discovering and discussing Recipes</p>
         </TextDiv>
       </DescDiv>
+      <Wrapper>
+        {foodArr.map((foodPic) => {
+          return (
+            <>
+              <FoodImg src={foodPic} />
+            </>
+          );
+        })}
+      </Wrapper>
     </MainWrapper>
   );
 };
@@ -47,7 +47,6 @@ const LandingPage = () => {
 const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: 60vh;
 `;
 
 const Wrapper = styled.div`
@@ -68,7 +67,7 @@ const TextDiv = styled.div`
 
 const FoodImg = styled.img`
   width: 33.33vw;
-  height: 15vh;
+  height: 16vh;
   object-fit: cover;
 `;
 
