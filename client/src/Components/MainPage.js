@@ -68,6 +68,7 @@ const Wrapper = styled.div`
   padding: 5px;
   align-items: center;
   border: 1px solid lightskyblue;
+  cursor: pointer;
 `;
 
 const EleDiv = styled.div`
