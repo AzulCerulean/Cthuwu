@@ -9,7 +9,8 @@ Recipe sharing web-app.
 Users are able to sign-up and post recipes on the feed.
 Social media for sharing, discovering and discussing Recipes
 
-Initially tought of making a tinder-esque recipe sharibng app, but for the lack of time and some issues this is it's current form.
+Initially tought of making a tinder-esque recipe sharing app, but for the lack of time and some issues this is it's current form.
+Ended up being a social media for sharing recipes.
 
 Here is my initial proposition:
 https://docs.google.com/document/d/1ayxvvNkaKH9x4EhpN0Rh3d84nRhfSJw0eXUEhCPAe-A/edit?usp=sharing
