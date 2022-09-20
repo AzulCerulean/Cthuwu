@@ -17,7 +17,9 @@ https://docs.google.com/document/d/1ayxvvNkaKH9x4EhpN0Rh3d84nRhfSJw0eXUEhCPAe-A/
 
 This app uses React js on the front-end, Express js in the back-end and MongoDB as a DB.
 
-I finally also decided to do my own user creation and used bcryptjs for password encryption.
+There were a few issues with trying to make Auth0 to work with MongoDB, including a needed subscription.
+I finally settled to do my own user creation and used bcryptjs for password encryption, and a context for keeping the loggedin user data.
+It's currently working, but I would probably need to use a JWT for users for better security.
 
 I tried to limit my use of packages as we were supposed to build things from the ground up.
 
