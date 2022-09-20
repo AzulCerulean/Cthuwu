@@ -56,7 +56,7 @@ Once Signed-in a user can then create a new recipe when opening the sidebar
 It leads to the recipe creation page
 
 ![Cthuwu create new recipe](./assets/cthuwu%20new%20recipe.PNG)
-![Cthuwu new recipe submitted](./assets/cthuwu%20new%20recipe.PNG)
+![Cthuwu new recipe submitted](./assets/cthuwu%20recipe%20created.PNG)
 
 This too creates a new object in MongoDB
 
