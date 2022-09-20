@@ -32,4 +32,4 @@ Users are first dropped to the landing page:
 
 They then can log-in or sign-up by either going to the menu on the top left or the sign-in button on the top right.
 
-
+![Cthuwu sign-in](./assets/cthuwu%sign%in.PNG)
