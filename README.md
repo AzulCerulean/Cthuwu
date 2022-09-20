@@ -24,7 +24,7 @@ It's currently working, but I would probably need to use a JWT for users for bet
 I tried to limit my use of packages as we were supposed to build things from the ground up.
 
 
-## How to use it
+## A look at Cthuwu
 
 Users are first dropped to the landing page:
 
