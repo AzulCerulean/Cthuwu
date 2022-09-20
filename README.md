@@ -23,6 +23,11 @@ It's currently working, but I would probably need to use a JWT for users for bet
 
 I tried to limit my use of packages as we were supposed to build things from the ground up.
 
+I used GitHub's Project as my kanban board for this project
+
+![Cthuwu Kanban](./assets/cthuwu%20project%20kanban.PNG)
+
+https://github.com/users/AzulCerulean/projects/1
 
 ## A look at Cthuwu
 
