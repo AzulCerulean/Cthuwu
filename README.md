@@ -29,6 +29,11 @@ I tried to limit my use of packages as we were supposed to build things from the
 Users are first dropped to the landing page:
 
 ![Cthuwu landing page](./assets/Screen%20Shot%202022-08-17%20at%2010.09.49%20AM.png)
+![Cthuwu sidebar](./assets/cthuwu%20sidebar.PNG)
+
+You can also nagivigate to the Homepage by clicking on the logo on top or through the sidebar and that should lead a person to the Home feed.
+
+![Cthuwu home feed](./assets/cthuwu%20home%20feed.PNG)
 
 They then can log-in or sign-up by either going to the menu on the top left or the sign-in button on the top right.
 
@@ -40,4 +45,23 @@ Signing in:
 Signing up:
 
 ![Cthuwu sign-up](./assets/cthuwu%20sign%20up.PNG)
-![Cthuwu signed-in](./assets/cthuwu%20user%20created.PNG)
+![Cthuwu signed-up](./assets/cthuwu%20user%20created.PNG)
+
+![Cthuwu MongoDB users](./assets/cthuwu%20mongodb%20user.PNG)
+
+Once Signed-in a user can then create a new recipe when opening the sidebar
+
+![Cthuwu sidebar signed-in](./assets/cthuwu%20sidebar%20signedin.PNG)
+
+It leads to the recipe creation page
+
+![Cthuwu create new recipe](./assets/cthuwu%20new%20recipe.PNG)
+![Cthuwu new recipe submitted](./assets/cthuwu%20new%20recipe.PNG)
+
+This too creates a new object in MongoDB
+
+The user that created the recipe has some options on on the recipe, they can update it or delete it from here.
+
+![Cthuwu recipe options](./assets/cthuwu%20update%2C%20delete.PNG)
+
+When updating they can update any field in the recipe card, and delete will delete the recipe forever.
