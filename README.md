@@ -35,6 +35,10 @@ You can also nagivigate to the Homepage by clicking on the logo on top or throug
 
 ![Cthuwu home feed](./assets/cthuwu%20home%20feed.PNG)
 
+Clicking on a recipe here will lead a person to the recipe details page
+
+![Cthuwu recipe details](./assets/cthuwu%20recipe%20card.PNG)
+
 They then can log-in or sign-up by either going to the menu on the top left or the sign-in button on the top right.
 
 Signing in:
@@ -60,7 +64,7 @@ It leads to the recipe creation page
 
 This too creates a new object in MongoDB
 
-The user that created the recipe has some options on on the recipe, they can update it or delete it from here.
+The user that created the recipe has some options on on the recipe, they can update it or delete it from the recipe details page.
 
 ![Cthuwu recipe options](./assets/cthuwu%20update%2C%20delete.PNG)
 
