@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../context/userContext";
 import Loading from "./Loading";
 
 const RecipeDetails = () => {

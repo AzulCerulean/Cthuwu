@@ -8,7 +8,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "../assets/SidebarData";
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { HiOutlinePlusCircle } from "react-icons/hi";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../context/userContext";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
