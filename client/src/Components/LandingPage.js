@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
-import Loading from "./Loading";
+// import { useEffect, useState } from "react";
+// import Loading from "./Loading";
 import styled from "styled-components";
 
 const LandingPage = () => {
-  const [foodArr, setFoodArr] = useState([]);
+  // const [foodArr, setFoodArr] = useState([]);
 
-  useEffect(() => {
-    for (let i = 0; i < 6; i++) {
-      fetch("https://foodish-api.herokuapp.com/api/")
-        .then((res) => res.json())
-        .then((data) => {
-          return setFoodArr((foodArr) => [...foodArr, data.image]);
-        });
-    }
-  }, []);
+  // useEffect(() => {
+  //   for (let i = 0; i < 6; i++) {
+  //     fetch("https://foodish-api.herokuapp.com/api/")
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         return setFoodArr((foodArr) => [...foodArr, data.image]);
+  //       });
+  //   }
+  // }, []);
 
-  if (foodArr.length !== 12) {
-    return <Loading />;
-  }
+  // if (foodArr.length !== 12) {
+  //   return <Loading />;
+  // }
 
   return (
     <MainWrapper>
@@ -31,7 +31,7 @@ const LandingPage = () => {
           <p>Social media for sharing, discovering and discussing Recipes</p>
         </TextDiv>
       </DescDiv>
-      <Wrapper>
+      {/* <Wrapper>
         {foodArr.map((foodPic) => {
           return (
             <>
@@ -39,7 +39,7 @@ const LandingPage = () => {
             </>
           );
         })}
-      </Wrapper>
+      </Wrapper> */}
     </MainWrapper>
   );
 };
@@ -49,10 +49,10 @@ const MainWrapper = styled.div`
   flex-direction: column;
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
+// const Wrapper = styled.div`
+//   display: flex;
+//   flex-wrap: wrap;
+// `;
 
 const DescDiv = styled.div`
   display: flex;
@@ -65,11 +65,11 @@ const TextDiv = styled.div`
   justify-content: space-around;
 `;
 
-const FoodImg = styled.img`
-  width: 33.33vw;
-  height: 16vh;
-  object-fit: cover;
-`;
+// const FoodImg = styled.img`
+//   width: 33.33vw;
+//   height: 16vh;
+//   object-fit: cover;
+// `;
 
 const Catto = styled.img`
   width: 10em;
